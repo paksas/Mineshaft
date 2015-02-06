@@ -1,0 +1,157 @@
+fileFormatVersion: 2
+guid: ca64387e231755d419c4300c464311d2
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: digits_0
+    21300002: digits_1
+    21300004: digits_2
+    21300006: digits_3
+    21300008: digits_4
+    21300010: digits_5
+    21300012: digits_6
+    21300014: digits_7
+    21300016: digits_8
+    21300018: digits_9
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 512
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: digits_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 354
+        width: 129
+        height: 155
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: digits_1
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 354
+        width: 56
+        height: 155
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: digits_2
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 354
+        width: 129
+        height: 155
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: digits_3
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 354
+        width: 127
+        height: 155
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: digits_4
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 195
+        width: 118
+        height: 155
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: digits_5
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 195
+        width: 127
+        height: 155
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: digits_6
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 195
+        width: 128
+        height: 155
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: digits_7
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 195
+        width: 114
+        height: 155
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: digits_8
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 39
+        width: 126
+        height: 155
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: digits_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 39
+        width: 126
+        height: 155
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 

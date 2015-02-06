@@ -1,0 +1,213 @@
+fileFormatVersion: 2
+guid: ad4262535f2059c499fa9ff140e2babb
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: backgroundAtlas_0
+    21300002: backgroundAtlas_1
+    21300004: backgroundAtlas_2
+    21300006: backgroundAtlas_3
+    21300008: backgroundAtlas_4
+    21300010: backgroundAtlas_4
+    21300012: backgroundAtlas_5
+    21300014: backgroundAtlas_6
+    21300016: backgroundAtlas_7
+    21300018: backgroundAtlas_8
+    21300020: backgroundAtlas_9
+    21300022: backgroundAtlas_10
+    21300024: backgroundAtlas_11
+    21300026: backgroundAtlas_12
+    21300028: backgroundAtlas_13
+    21300030: backgroundAtlas_14
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: backgroundAtlas_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1283
+        width: 767
+        height: 765
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: backgroundAtlas_1
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 2043
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: backgroundAtlas_3
+      rect:
+        serializedVersion: 2
+        x: 1328
+        y: 0
+        width: 720
+        height: 2048
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: backgroundAtlas_4
+      rect:
+        serializedVersion: 2
+        x: 807
+        y: 1959
+        width: 99
+        height: 84
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: backgroundAtlas_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 549
+        width: 768
+        height: 712
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: backgroundAtlas_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 199
+        height: 208
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: backgroundAtlas_6
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 27
+        width: 109
+        height: 103
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: backgroundAtlas_7
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 27
+        width: 109
+        height: 103
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: backgroundAtlas_8
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 27
+        width: 110
+        height: 103
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: backgroundAtlas_9
+      rect:
+        serializedVersion: 2
+        x: 556
+        y: 27
+        width: 117
+        height: 103
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: backgroundAtlas_10
+      rect:
+        serializedVersion: 2
+        x: 1016
+        y: 1960
+        width: 82
+        height: 80
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: backgroundAtlas_11
+      rect:
+        serializedVersion: 2
+        x: 1150
+        y: 1959
+        width: 89
+        height: 89
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: backgroundAtlas_12
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 0
+        width: 605
+        height: 466
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 1}
+    - name: backgroundAtlas_13
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 281
+        width: 320
+        height: 267
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: backgroundAtlas_14
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 251
+        width: 110
+        height: 131
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
