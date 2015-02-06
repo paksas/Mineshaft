@@ -52,7 +52,7 @@ public abstract class Obstacle : MonoBehaviour
       m_deathMarker = GetComponentInChildren<DeathMarkerController>();
       m_SignRightText = transform.FindChild("SignRight").GetComponentInChildren<Text>();
       m_SignLeftText = transform.FindChild("SignLeft").GetComponentInChildren<Text>();
-      m_SignCentralText = transform.FindChild("SignCentral").GetComponentInChildren<Text>();
+      // m_SignCentralText = transform.FindChild("SignCentral").GetComponentInChildren<Text>();
    }
 
    void Start()

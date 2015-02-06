@@ -259,7 +259,7 @@ public class ObstacleController : MonoBehaviour, IGameControllerListener
             m_lastObstacleIdx = i;
          }
 
-         if ( obstacleVertOffset < 0.0f && obstacleVertOffset > -distToObstacleNearestThePlayer )
+         if ( obstacleVertOffset < 0.0f && obstacleVertOffset > -distToObstacleNearestThePlayer && !obstacle.HasBeenPassed() )
          {
             distToObstacleNearestThePlayer = -obstacleVertOffset;
             m_incomingObstacleIdx = i;
