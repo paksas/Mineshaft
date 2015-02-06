@@ -26,6 +26,7 @@ public abstract class Obstacle : MonoBehaviour
    private float                 m_fadeValue = 0.0f;
    private Text                  m_SignLeftText;
    private Text                  m_SignRightText;
+   private Text                  m_SignCentralText;
    private DeathMarkerController m_deathMarker;
 
 
@@ -51,6 +52,7 @@ public abstract class Obstacle : MonoBehaviour
       m_deathMarker = GetComponentInChildren<DeathMarkerController>();
       m_SignRightText = transform.FindChild("SignRight").GetComponentInChildren<Text>();
       m_SignLeftText = transform.FindChild("SignLeft").GetComponentInChildren<Text>();
+      m_SignCentralText = transform.FindChild("SignCentral").GetComponentInChildren<Text>();
    }
 
    void Start()
@@ -94,7 +96,6 @@ public abstract class Obstacle : MonoBehaviour
     */
    private void Init()
    {
-      ShowTutorial( Controller.CanDisplayTutorial );
    }
 
    public abstract void OnMouseUpObs();
@@ -120,16 +121,39 @@ public abstract class Obstacle : MonoBehaviour
       Controller.OnObstaclePassed(this);
    }
 
-   public void SetObstacleSign (string _number)
+   public void SetObstacleSign (string _number, bool _useCentralCounter)
    {
-       if (m_SignRightText != null )
+       if (!_useCentralCounter)
        {
-           m_SignRightText.text = _number;
+           if (m_SignCentralText != null)
+           {
+               m_SignCentralText.enabled = false;
+           }
+           if (m_SignRightText != null)
+           {
+               m_SignRightText.text = _number;
+           }
+           if (m_SignLeftText != null)
+           {
+               m_SignLeftText.text = _number;
+           }
        }
-       if (m_SignLeftText != null)
+       else
        {
-           m_SignLeftText.text = _number;
+           if (m_SignCentralText != null)
+           {
+               m_SignCentralText.text = _number;
+           }
+           if (m_SignRightText != null)
+           {
+               m_SignRightText.enabled = false;
+           }
+           if (m_SignLeftText != null)
+           {
+               m_SignLeftText.enabled = false;
+           }
        }
+      
    }
 
    public int GetObstacleSignValue ()
