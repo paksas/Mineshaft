@@ -42,6 +42,7 @@ public class ObstacleController : MonoBehaviour, IGameControllerListener
    private int m_incomingObstacleIdx;
    private int m_lastObstacleIdx;
    private bool m_userInputAccepted = false;
+   private bool m_continuousObstacleShiftEnabled = false;
    private ObstaclesOccluder m_occluder;
 
    private ShawlController m_shawlController;
@@ -169,7 +170,7 @@ public class ObstacleController : MonoBehaviour, IGameControllerListener
    {
       StepObstacles();
 
-      if (!m_userInputAccepted)
+      if (m_continuousObstacleShiftEnabled)
       {
          // if the user doesn't have control of the input, we need to give him room to breathe
          // until he regains that control - so we're gonna be keeping all obstacles at
@@ -185,6 +186,7 @@ public class ObstacleController : MonoBehaviour, IGameControllerListener
    public void OnGameStarted()
    {
       m_registry = GetComponent<ObstaclesRegistry>();
+      m_continuousObstacleShiftEnabled = false;
       m_currDistanceBetweenObstacles = m_distanceBetweenObstacles.m_initialDistance;
       int numVisibleObstacles = CalcNumVisibleObstacles();
 
@@ -204,13 +206,14 @@ public class ObstacleController : MonoBehaviour, IGameControllerListener
    public void OnGamePaused()
    {
       m_occluder.Activate(true);
-      ShiftObstaclesDown();
+      m_continuousObstacleShiftEnabled = true;
       AcceptUserInput(false);
    }
 
    public void OnGameResumed()
    {
       m_occluder.Activate(false);
+      m_continuousObstacleShiftEnabled = false;
       AcceptUserInput(true);
    }
 
