@@ -36,7 +36,7 @@ public class GameController : MonoBehaviour
 
    [SerializeField]
    private float                             m_scrollSpeed = 3.0f;
-   private bool                              m_gamePaused = false;
+   private int                               m_gamePaused = 0;
 
    [SerializeField]
    private LevelLoader                       m_gameOverScreenLoader = null;
@@ -110,23 +110,29 @@ public class GameController : MonoBehaviour
    public void StartGame()
    {
       m_gameRunning = true;
-      m_gamePaused = false;
+      m_gamePaused = 0;
       NotifyGameStarted();
       m_player.StartScreaming();
    }
 
    public void PauseGame()
    {
-      m_gamePaused = true;
-      m_player.StopScreaming();
-      NotifyGamePaused();
+      m_gamePaused++;
+      if ( m_gamePaused == 1 )
+      {
+         m_player.StopScreaming();
+         NotifyGamePaused();
+      }
    }
 
    public void ResumeGame()
    {
-      m_gamePaused = false;
-      m_player.StartScreaming();
-      NotifyGameResumed();
+      m_gamePaused = Mathf.Max( 0, m_gamePaused - 1 );
+      if ( m_gamePaused <= 0 )
+      {
+         m_player.StartScreaming();
+         NotifyGameResumed();
+      }
    }
 
    /**
@@ -160,7 +166,7 @@ public class GameController : MonoBehaviour
       {
          listener.OnGameStarted();
       }
-      if ( m_gamePaused )
+      if ( m_gamePaused > 0 )
       {
          listener.OnGamePaused();
       }

@@ -19,6 +19,8 @@ TextureImporter:
     21300028: backgroundAtlas_13
     21300030: backgroundAtlas_14
     21300032: backgroundAtlas_15
+    21300034: backgroundAtlas_16
+    21300036: backgroundAtlas_17
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -217,6 +219,26 @@ TextureImporter:
         y: 655
         width: 135
         height: 141
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: backgroundAtlas_16
+      rect:
+        serializedVersion: 2
+        x: 887
+        y: 1260
+        width: 285
+        height: 274
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: backgroundAtlas_17
+      rect:
+        serializedVersion: 2
+        x: 887
+        y: 1569
+        width: 285
+        height: 271
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}

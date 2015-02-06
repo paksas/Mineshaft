@@ -18,7 +18,6 @@ public class InGameGUIController : MonoBehaviour, IGameControllerListener
    private Animator           m_animationController;
    private SoundManager       m_soundManager;
    private AudioSource        m_audioSource;
-   private GameController     m_gameController;
    private State              m_currentState = State.Inactive;
    private bool               m_userInputAccepted = false;
 
@@ -31,8 +30,7 @@ public class InGameGUIController : MonoBehaviour, IGameControllerListener
       m_buttons = GetComponentsInChildren<InGameGUIButton>();
       m_animationController = GetComponent<Animator>();
 
-      m_gameController = GameObject.FindGameObjectWithTag(GameConsts.TAG_GAME_CONTROLLER).GetComponent<GameController>();
-      m_gameController.AddListener( this );
+      GameController.Instance.AddListener( this );
    }
 
    // Called in response to the button being released
@@ -60,7 +58,7 @@ public class InGameGUIController : MonoBehaviour, IGameControllerListener
       // slow the time as the menu is sliding out
       if (m_currentState == State.SlidingOut)
       {
-         m_gameController.PauseGame();
+         GameController.Instance.PauseGame();
       }
    }
 
@@ -78,7 +76,7 @@ public class InGameGUIController : MonoBehaviour, IGameControllerListener
          case State.SlidingIn:
             {
                // bring back the regular time scale as the menu has fully slid in
-               m_gameController.ResumeGame();
+               GameController.Instance.ResumeGame();
                m_currentState = State.Inactive;
                break;
             }
@@ -103,7 +101,9 @@ public class InGameGUIController : MonoBehaviour, IGameControllerListener
       m_userInputAccepted = false;
    }
 
-   public void OnGamePaused() {}
+   public void OnGamePaused() 
+   {
+   }
 
    public void OnGameResumed() {}
 

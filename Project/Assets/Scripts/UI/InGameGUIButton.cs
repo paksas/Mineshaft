@@ -54,7 +54,8 @@ public class InGameGUIButton : MonoBehaviour
          method.Invoke(m_operatedObject, new object[] { });
       }
 
-      // method's been invoked - automatically hide the menu
+      // method's been invoked - automatically hide the menu, provided it's not a callback button,
+      // in which case we need to wait a bit longer
       if ( m_menuController != null )
       {
          m_menuController.TransitionToNextState();
@@ -86,4 +87,3 @@ public class InGameGUIButton : MonoBehaviour
       return -1;
    }
 }
-
