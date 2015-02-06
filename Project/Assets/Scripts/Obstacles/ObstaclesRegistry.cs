@@ -6,17 +6,28 @@ using rzymskie_cs;
 public class ObstaclesRegistry : MonoBehaviour
 {
    [SerializeField]
+   private int             m_numObstaclesPerTutorialStage = 4;
+   [SerializeField]
    private Obstacle[]      m_obstacles = null;
    private int             m_currentObstacleSignNumber;
    private int             m_score;
 
-   private int             m_numDifferentObstaclesSpawned;
-   private int             m_leftToScoreToProceed = 8;
+   private int             m_numDifferentObstaclesSpawned = 1;
+   private int             m_leftToScoreToProceed;
+
+   private string          TUTORIAL_STATE_KEY = "TUTORIAL_STAGE_KEY";
+
+   void Start()
+   {
+      m_numDifferentObstaclesSpawned = Mathf.Max( 1, PlayerPrefs.GetInt(TUTORIAL_STATE_KEY) );
+      PlayerPrefs.SetInt(TUTORIAL_STATE_KEY, m_numDifferentObstaclesSpawned);
+      m_leftToScoreToProceed = m_numObstaclesPerTutorialStage;
+   }
 
    public Obstacle CreateRandomObstacle()
    {
       int upperBoundary = m_obstacles.Length;
-      int lowerBoundary = Mathf.Max( 0, upperBoundary - 1 - m_numDifferentObstaclesSpawned );
+      int lowerBoundary = Mathf.Max( 0, upperBoundary - m_numDifferentObstaclesSpawned );
       int obstacleTypeIndex = Random.Range(lowerBoundary, upperBoundary);
 
       Obstacle obstacleInstance = Instantiate(m_obstacles[obstacleTypeIndex]) as Obstacle;
@@ -41,13 +52,15 @@ public class ObstaclesRegistry : MonoBehaviour
          return;
       }
 
-      if ( obstacle.m_obstacleTypeIndex == m_obstacles.Length  - 1 - m_numDifferentObstaclesSpawned )
+      if ( obstacle.m_obstacleTypeIndex == m_obstacles.Length - m_numDifferentObstaclesSpawned )
       {
          m_leftToScoreToProceed--;
          if ( m_leftToScoreToProceed <= 0 )
          {
-            m_leftToScoreToProceed = 8;
+            m_leftToScoreToProceed = m_numObstaclesPerTutorialStage;
             ++m_numDifferentObstaclesSpawned;
+
+            PlayerPrefs.SetInt(TUTORIAL_STATE_KEY, m_numDifferentObstaclesSpawned);
          }
       }
    }

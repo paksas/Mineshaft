@@ -94,7 +94,6 @@ public abstract class Obstacle : MonoBehaviour
     */
    private void Init()
    {
-      ShowTutorial( Controller.CanDisplayTutorial );
    }
 
    public abstract void OnMouseUpObs();
