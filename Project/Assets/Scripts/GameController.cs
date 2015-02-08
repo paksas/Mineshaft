@@ -32,7 +32,7 @@ public class GameController : MonoBehaviour
    public static GameController              Instance;
 
    private bool                              m_gameRunning;
-   private Player                            m_player;
+   private MyPlayer                            m_player;
 
    [SerializeField]
    private float                             m_scrollSpeed = 3.0f;
@@ -72,7 +72,7 @@ public class GameController : MonoBehaviour
   
    void Start()
    {
-      m_player = GameObject.FindGameObjectWithTag(GameConsts.TAG_PLAYER).GetComponent<Player>();
+      m_player = GameObject.FindGameObjectWithTag(GameConsts.TAG_PLAYER).GetComponent<MyPlayer>();
 
       // the game starts automatically
       StartGame();

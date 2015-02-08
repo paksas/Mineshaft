@@ -119,7 +119,7 @@ public class ObstacleController : MonoBehaviour, IGameControllerListener
       m_gameController = GameObject.FindGameObjectWithTag(GameConsts.TAG_GAME_CONTROLLER).GetComponent<GameController>();
       m_gameController.AddListener(this);
 
-      Player player = GameObject.FindGameObjectWithTag(GameConsts.TAG_PLAYER).GetComponent<Player>();
+      MyPlayer player = GameObject.FindGameObjectWithTag(GameConsts.TAG_PLAYER).GetComponent<MyPlayer>();
       m_shawlController = player.GetComponentInChildren<ShawlController>();
 
       m_occluder = GetComponentInChildren<ObstaclesOccluder>();
