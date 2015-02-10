@@ -12,5 +12,6 @@ public static class GameConsts
    public const string TAG_LEVEL_LOADER = "LevelLoader";
 
    public const string PLAYER_SCORE_KEY = "PlayerScore";
+   public const string PLAY_GAMES_STATE_KEY = "PlayGamesState";
 
 }
