@@ -179,6 +179,7 @@
     <Compile Include="Assets\Scripts\Utils\DeathMarkerController.cs" />
     <Compile Include="Assets\Scripts\Utils\MenuButtonPositioner.cs" />
     <Compile Include="Assets\Scripts\Utils\OnInputScreenFxPlayer.cs" />
+    <Compile Include="Assets\Scripts\Utils\PLayGamesController.cs" />
     <Compile Include="Assets\Scripts\Utils\Rzymskie.cs" />
     <Compile Include="Assets\Scripts\Utils\ScrollController.cs" />
   </ItemGroup>

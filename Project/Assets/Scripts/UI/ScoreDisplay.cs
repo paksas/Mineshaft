@@ -8,68 +8,14 @@ using UnityEngine.SocialPlatforms;
 public class ScoreDisplay : MonoBehaviour 
 {
    public SpriteRenderer[]          m_digitSprites = null;
-   private bool                     m_triedToLogIn = false;
-   private bool                     m_loggedIn = false;
-   private bool                     m_triedToPostScore = false;
-   private bool                     m_scorePosted = false;
-   private bool                     m_readyToSetScore = false;
-   private bool                     m_leaderbordsUIShown= false;
-   private int                      playerScore;
+   private PLayGamesController      m_playGamesController;   
+ 
 
-
-   void Update()
-   {
-       // authenticate user:
-       if ( !m_triedToLogIn )
-       {
-           m_triedToLogIn = true;
-           Social.localUser.Authenticate((bool success) =>
-           {
-               if (success)
-               {
-                   m_loggedIn = true;
-               }
-               else
-               {
-                   m_triedToLogIn = false;
-               }
-           });
-       }
-
-       if (m_loggedIn)
-       {
-           if ( m_readyToSetScore )
-           {
-               if (!m_triedToPostScore)
-               {
-                   m_triedToPostScore = true;
-                   Social.ReportScore(playerScore, "Cfji293fjsie_QA", (bool success) =>
-                   {
-                       if (success)
-                       {
-                           m_scorePosted = true;
-                       }
-                       else
-                       {
-                           m_triedToPostScore = false;
-                       }
-                   });
-               }
-           }
-
-       }
-
-       if (m_scorePosted && !m_leaderbordsUIShown)
-       {
-           m_leaderbordsUIShown = true;
-           PlayGamesPlatform.Instance.ShowLeaderboardUI("Cfji293fjsie_QA");             
-       }
-   }
 
 	// Use this for initialization
-	void Start () 
+   void Start () 
    {
-      
+       m_playGamesController = GameObject.FindGameObjectWithTag(GameConsts.PLAY_GAMES_CONTROLLERY).GetComponent<PLayGamesController>();
       if ( m_digitSprites == null || m_digitSprites.Length != 10 )
       {
          Debug.LogError( "ScoreDisplay: please define 10 sprites corresponding to successive numbers in range 0-9" );
@@ -87,7 +33,7 @@ public class ScoreDisplay : MonoBehaviour
       }
 
       // get the serialized player score
-	    playerScore = PlayerPrefs.GetInt( GameConsts.PLAYER_SCORE_KEY );
+	  int  playerScore = PlayerPrefs.GetInt( GameConsts.PLAYER_SCORE_KEY );
 
 
       // output the player score on screen
@@ -127,7 +73,11 @@ public class ScoreDisplay : MonoBehaviour
          spriteTransform.localPosition = new Vector3( spriteTransform.localPosition.x - textAlignmentOffset, 0.0f, 0.0f );
       }
 
-      m_readyToSetScore = true;
+      if (m_playGamesController != null)
+      {
+          m_playGamesController.PostScore();
+      }
+      
 	}
 	
 }
