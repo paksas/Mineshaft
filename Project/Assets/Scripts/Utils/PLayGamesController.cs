@@ -9,6 +9,7 @@ public class PLayGamesController : MonoBehaviour
 
     private bool m_isLoggingIn = false;
     private bool m_isPostingScore = false;
+    private bool m_isShowingLeaderBoards = false;
    
 
 
@@ -16,6 +17,7 @@ public class PLayGamesController : MonoBehaviour
     private bool m_loggedIn = false;
     private bool m_triedToPostScore = false;
     private bool m_scorePosted = false;
+  
     
 
     // Use this for initialization
@@ -27,6 +29,10 @@ public class PLayGamesController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if ( !Social.localUser.authenticated)
+        {
+            m_loggedIn = false;
+        }
         // authenticate user:
         if (m_isLoggingIn && !m_triedToLogIn)
         {
@@ -41,6 +47,7 @@ public class PLayGamesController : MonoBehaviour
                 else
                 {
                     m_isLoggingIn = false;
+                    m_triedToLogIn = false;
                 }
             });
         }
@@ -54,7 +61,7 @@ public class PLayGamesController : MonoBehaviour
             else 
             {                
                 m_triedToPostScore = true;
-                Social.ReportScore(PlayerPrefs.GetInt(GameConsts.PLAYER_SCORE_KEY), "Cfji293fjsie_QA", (bool success) =>
+                Social.ReportScore(PlayerPrefs.GetInt(GameConsts.PLAYER_SCORE_KEY), "CgkIusvHhscWEAIQAA", (bool success) =>
                 {
                     if (success)
                     {
@@ -64,8 +71,22 @@ public class PLayGamesController : MonoBehaviour
                     else
                     {
                         m_isPostingScore = false;
+                        m_triedToPostScore = false;
                     }
                 });    
+            }
+
+        }
+        if (m_isShowingLeaderBoards )
+        {
+            if (!m_loggedIn)
+            {
+                LogIn();
+            }
+            else
+            {
+                m_isShowingLeaderBoards = false;
+                PlayGamesPlatform.Instance.ShowLeaderboardUI("CgkIusvHhscWEAIQAA");                                             
             }
 
         }
@@ -94,7 +115,7 @@ public class PLayGamesController : MonoBehaviour
 
     public void ShowLeaderboards ()
     {
-        PlayGamesPlatform.Instance.ShowLeaderboardUI("Cfji293fjsie_QA"); 
+        m_isShowingLeaderBoards = true;
     }
 
 }

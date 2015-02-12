@@ -6,7 +6,8 @@ using UnityEngine.UI;
 [RequireComponent( typeof( Animator ) )]
 public class StartScreenController : MonoBehaviour 
 {
-   private Animator        m_animator;
+   public bool                 m_forceLogin;
+   private Animator            m_animator;
    private PLayGamesController m_playGamesController;   
  
 
@@ -14,7 +15,7 @@ public class StartScreenController : MonoBehaviour
 	void Start () 
     {
 	   m_animator = GetComponent< Animator >();
-       m_playGamesController = GameObject.FindGameObjectWithTag(GameConsts.PLAY_GAMES_CONTROLLERY).GetComponent<PLayGamesController>();
+       m_playGamesController = GameObject.FindGameObjectWithTag(GameConsts.PLAY_GAMES_CONTROLLER).GetComponent<PLayGamesController>();
        
 	}
 
@@ -27,7 +28,11 @@ public class StartScreenController : MonoBehaviour
         }
 
         m_playGamesController.Activate();
-        m_playGamesController.LogIn();
+
+        if (m_forceLogin)
+        {
+            m_playGamesController.LogIn();
+        }     
     }
 
 }

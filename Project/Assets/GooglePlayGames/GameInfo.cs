@@ -13,7 +13,7 @@ public static class GameInfo {
     private const string UnescapedApplicationId = "APPID";
     private const string UnescapedIosClientId = "CLIENTID";
 
-    public const string ApplicationId = "__APPID__"; // Filled in automatically
+    public const string ApplicationId = "774986917306"; // Filled in automatically
     public const string IosClientId = "__CLIENTID__"; // Filled in automatically
 
     public static bool ApplicationIdInitialized() {

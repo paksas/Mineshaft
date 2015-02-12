@@ -13,6 +13,6 @@ public static class GameConsts
 
    public const string PLAYER_SCORE_KEY = "PlayerScore";
    public const string PLAY_GAMES_STATE_KEY = "PlayGamesState";
-   public const string PLAY_GAMES_CONTROLLERY = "PlayGamesController";
+   public const string PLAY_GAMES_CONTROLLER = "PlayGamesController";
 
 }
