@@ -6,10 +6,12 @@ using UnityEngine.SocialPlatforms;
 
 public class PLayGamesController : MonoBehaviour
 {
+    public static PLayGamesController instance = null;
 
     private bool m_isLoggingIn = false;
     private bool m_isPostingScore = false;
     private bool m_isShowingLeaderBoards = false;
+    private static bool m_playGamesActive = false;
    
 
 
@@ -26,10 +28,26 @@ public class PLayGamesController : MonoBehaviour
 
     }
 
+    void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else if (instance != this)
+        {
+            Destroy(gameObject);
+        }
+
+        DontDestroyOnLoad(gameObject);
+        Activate();
+    }
+
+
     // Update is called once per frame
     void Update()
     {
-        if ( !Social.localUser.authenticated)
+        if ( !Social.Active.localUser.authenticated)
         {
             m_loggedIn = false;
         }
@@ -43,6 +61,7 @@ public class PLayGamesController : MonoBehaviour
                 {
                     m_loggedIn = true;
                     m_isLoggingIn = false;
+                    m_triedToLogIn = false;
                 }
                 else
                 {
@@ -67,6 +86,7 @@ public class PLayGamesController : MonoBehaviour
                     {
                         m_scorePosted = true;
                         m_isPostingScore = false;
+                        m_triedToPostScore = false;
                     }
                     else
                     {
@@ -96,11 +116,12 @@ public class PLayGamesController : MonoBehaviour
     {
         // Activate the Google Play Games platform
 
-        if (PlayerPrefs.GetInt(GameConsts.PLAY_GAMES_STATE_KEY) == 0)
+        if (!m_playGamesActive)
         {
+            m_playGamesActive = true;
             PlayGamesPlatform.Activate();
-            PlayerPrefs.SetInt(GameConsts.PLAY_GAMES_STATE_KEY, 1);
         }
+
     }
 
     public void LogIn()
@@ -115,6 +136,7 @@ public class PLayGamesController : MonoBehaviour
 
     public void ShowLeaderboards ()
     {
+        PostScore();
         m_isShowingLeaderBoards = true;
     }
 

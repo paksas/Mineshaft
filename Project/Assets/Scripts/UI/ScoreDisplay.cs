@@ -8,14 +8,12 @@ using UnityEngine.SocialPlatforms;
 public class ScoreDisplay : MonoBehaviour 
 {
    public SpriteRenderer[]          m_digitSprites = null;
-   private PLayGamesController      m_playGamesController;   
  
 
 
 	// Use this for initialization
    void Start () 
    {
-       m_playGamesController = GameObject.FindGameObjectWithTag(GameConsts.PLAY_GAMES_CONTROLLER).GetComponent<PLayGamesController>();
       if ( m_digitSprites == null || m_digitSprites.Length != 10 )
       {
          Debug.LogError( "ScoreDisplay: please define 10 sprites corresponding to successive numbers in range 0-9" );
@@ -73,10 +71,8 @@ public class ScoreDisplay : MonoBehaviour
          spriteTransform.localPosition = new Vector3( spriteTransform.localPosition.x - textAlignmentOffset, 0.0f, 0.0f );
       }
 
-      if (m_playGamesController != null)
-      {
-          m_playGamesController.PostScore();
-      }
+
+      PLayGamesController.instance.PostScore();
       
 	}
 	
