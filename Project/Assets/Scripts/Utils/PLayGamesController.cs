@@ -73,42 +73,29 @@ public class PLayGamesController : MonoBehaviour
 
         if (m_isPostingScore && !m_triedToPostScore)
         {
-            if (!m_loggedIn)
+                         
+            m_triedToPostScore = true;
+            Social.ReportScore(PlayerPrefs.GetInt(GameConsts.PLAYER_SCORE_KEY), "CgkIusvHhscWEAIQAA", (bool success) =>
             {
-                LogIn();
-            }
-            else 
-            {                
-                m_triedToPostScore = true;
-                Social.ReportScore(PlayerPrefs.GetInt(GameConsts.PLAYER_SCORE_KEY), "CgkIusvHhscWEAIQAA", (bool success) =>
+                if (success)
                 {
-                    if (success)
-                    {
-                        m_scorePosted = true;
-                        m_isPostingScore = false;
-                        m_triedToPostScore = false;
-                    }
-                    else
-                    {
-                        m_isPostingScore = false;
-                        m_triedToPostScore = false;
-                    }
-                });    
-            }
+                    m_scorePosted = true;
+                    m_isPostingScore = false;
+                    m_triedToPostScore = false;
+                }
+                else
+                {
+                    m_isPostingScore = false;
+                    m_triedToPostScore = false;
+                }
+            });    
+            
 
         }
         if (m_isShowingLeaderBoards )
-        {
-            if (!m_loggedIn)
-            {
-                LogIn();
-            }
-            else
-            {
-                m_isShowingLeaderBoards = false;
-                PlayGamesPlatform.Instance.ShowLeaderboardUI("CgkIusvHhscWEAIQAA");                                             
-            }
-
+        {         
+            m_isShowingLeaderBoards = false;
+            PlayGamesPlatform.Instance.ShowLeaderboardUI("CgkIusvHhscWEAIQAA");                                             
         }
     }
 
@@ -136,6 +123,10 @@ public class PLayGamesController : MonoBehaviour
 
     public void ShowLeaderboards ()
     {
+        if (!m_loggedIn)
+        {
+            LogIn();
+        }
         PostScore();
         m_isShowingLeaderBoards = true;
     }
