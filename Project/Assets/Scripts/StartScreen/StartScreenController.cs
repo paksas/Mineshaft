@@ -14,8 +14,9 @@ public class StartScreenController : MonoBehaviour
     {
 	   m_animator = GetComponent< Animator >();
 
-       if (m_forceLogin)
+       if (m_forceLogin && !PLayGamesController.m_forceLoginAttemptProcessed)
        {
+           PLayGamesController.m_forceLoginAttemptProcessed = true;
            PLayGamesController.instance.LogIn();
        }  
        

@@ -12,6 +12,7 @@ public class PLayGamesController : MonoBehaviour
     private bool m_isPostingScore = false;
     private bool m_isShowingLeaderBoards = false;
     private static bool m_playGamesActive = false;
+    public static bool m_forceLoginAttemptProcessed = false;
    
 
 
@@ -126,6 +127,7 @@ public class PLayGamesController : MonoBehaviour
         if (!m_loggedIn)
         {
             LogIn();
+
         }
         PostScore();
         m_isShowingLeaderBoards = true;
