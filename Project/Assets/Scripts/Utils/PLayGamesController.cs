@@ -132,5 +132,9 @@ public class PLayGamesController : MonoBehaviour
         PostScore();
         m_isShowingLeaderBoards = true;
     }
+    public bool IsLoggedIn()
+    {
+        return m_loggedIn;
+    }
 
 }

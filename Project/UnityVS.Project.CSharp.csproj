@@ -181,6 +181,7 @@
     <Compile Include="Assets\Scripts\Utils\OnInputScreenFxPlayer.cs" />
     <Compile Include="Assets\Scripts\Utils\PLayGamesController.cs" />
     <Compile Include="Assets\Scripts\Utils\PlayGamesControllerLoader.cs" />
+    <Compile Include="Assets\Scripts\Utils\PlayGamesLoginIndicator.cs" />
     <Compile Include="Assets\Scripts\Utils\Rzymskie.cs" />
     <Compile Include="Assets\Scripts\Utils\ScrollController.cs" />
   </ItemGroup>
