@@ -35,7 +35,13 @@ public class GameController : MonoBehaviour
    private MyPlayer                            m_player;
 
    [SerializeField]
-   private float                             m_scrollSpeed = 3.0f;
+   private float m_scrollSpeed = 4.0f;
+   [SerializeField]
+   private float m_speedIncreaseBy = 0.2f;
+   [SerializeField]
+   private float m_speedIncreaseEach = 5.0f;
+   [SerializeField]
+   private float m_maxScrollSpeed = 8.0f;
    private int                               m_gamePaused = 0;
 
    [SerializeField]
@@ -58,6 +64,17 @@ public class GameController : MonoBehaviour
    public float ScrollSpeed
    {
       get { return m_scrollSpeed; }
+   }
+
+   IEnumerator Co_IncreaseSpeed()
+   {
+       WaitForSeconds l_yield = new WaitForSeconds(m_speedIncreaseEach);
+       while (true)
+       {
+           yield return l_yield;
+           if (m_scrollSpeed < m_maxScrollSpeed)
+               m_scrollSpeed += m_speedIncreaseBy;
+       }
    }
 
    #endregion
@@ -175,6 +192,7 @@ public class GameController : MonoBehaviour
 
    private void NotifyGameStarted()
    {
+      StartCoroutine(Co_IncreaseSpeed());
       foreach ( IGameControllerListener listener in m_listeners )
       {
          listener.OnGameStarted();
@@ -183,6 +201,7 @@ public class GameController : MonoBehaviour
 
    private void NotifyGameFinished()
    {
+      StopCoroutine(Co_IncreaseSpeed());
       foreach ( IGameControllerListener listener in m_listeners )
       {
          listener.OnGameFinished();
@@ -191,6 +210,7 @@ public class GameController : MonoBehaviour
 
    private void NotifyGamePaused()
    {
+      StopCoroutine(Co_IncreaseSpeed());
       foreach ( IGameControllerListener listener in m_listeners )
       {
          listener.OnGamePaused();
@@ -199,6 +219,7 @@ public class GameController : MonoBehaviour
 
    private void NotifyGameResumed()
    {
+      StartCoroutine(Co_IncreaseSpeed());
       foreach ( IGameControllerListener listener in m_listeners )
       {
          listener.OnGameResumed();
