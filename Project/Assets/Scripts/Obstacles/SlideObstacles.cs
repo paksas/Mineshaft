@@ -23,12 +23,12 @@ public class SlideObstacles : Obstacle
 
 	public override void OnMouseDownObs()
 	{
-		m_mouseDownPos = CalculateMousePos();
+		m_mouseDownPos = Input.mousePosition;
 	}
 
 	public override void OnMouseUpObs()
 	{
-		Vector3 mouseUpPos = CalculateMousePos();
+		Vector3 mouseUpPos = Input.mousePosition;
 		Vector3 mouseDelta = mouseUpPos - m_mouseDownPos;
 
 
@@ -62,11 +62,6 @@ public class SlideObstacles : Obstacle
 			Pass();
          ActivateRigidBodies();
 		}
-	}
-
-	private Vector3 CalculateMousePos()
-	{
-		return Camera.main.ScreenToWorldPoint( Input.mousePosition );
 	}
 
    private void ActivateRigidBodies()
