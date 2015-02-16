@@ -31,6 +31,11 @@ public class SlideObstacles : Obstacle
 		Vector3 mouseUpPos = Input.mousePosition;
 		Vector3 mouseDelta = mouseUpPos - m_mouseDownPos;
 
+      if ( mouseDelta.magnitude < 50.0f )
+      {
+         // the move was too short
+         return;
+      }
 
       Vector3 dir = mouseDelta.normalized;
       float angle = Mathf.Acos( Vector3.Dot( dir, new Vector3( 1, 0, 0 ) ) ) * Mathf.Rad2Deg;
