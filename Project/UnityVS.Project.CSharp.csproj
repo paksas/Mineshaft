@@ -56,6 +56,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="UnityVS.Project.CSharp.Plugins.csproj">
+      <Project>{928C1593-6802-452A-CDDC-5533A92F08F8}</Project>
+      <Name>UnityVS.Project.CSharp.Plugins</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="Assets\GooglePlayGames\BasicApi\Achievement.cs" />
     <Compile Include="Assets\GooglePlayGames\BasicApi\DummyClient.cs" />
     <Compile Include="Assets\GooglePlayGames\BasicApi\IPlayGamesClient.cs" />
@@ -158,6 +164,7 @@
     <Compile Include="Assets\Scripts\CameraAdjustor.cs" />
     <Compile Include="Assets\Scripts\GameConsts.cs" />
     <Compile Include="Assets\Scripts\GameController.cs" />
+    <Compile Include="Assets\Scripts\Menu.cs" />
     <Compile Include="Assets\Scripts\Obstacles\Obstacle.cs" />
     <Compile Include="Assets\Scripts\Obstacles\ObstacleController.cs" />
     <Compile Include="Assets\Scripts\Obstacles\ObstaclesOccluder.cs" />
@@ -175,22 +182,24 @@
     <Compile Include="Assets\Scripts\UI\LevelLoader.cs" />
     <Compile Include="Assets\Scripts\UI\ScoreDisplay.cs" />
     <Compile Include="Assets\Scripts\UI\TooltipController.cs" />
+    <Compile Include="Assets\Scripts\Utils\AdmobManager.cs" />
     <Compile Include="Assets\Scripts\Utils\CameraFade.cs" />
     <Compile Include="Assets\Scripts\Utils\DeathMarkerController.cs" />
     <Compile Include="Assets\Scripts\Utils\MenuButtonPositioner.cs" />
-    <Compile Include="Assets\Scripts\Utils\TutorialController.cs" />
     <Compile Include="Assets\Scripts\Utils\OnInputScreenFxPlayer.cs" />
     <Compile Include="Assets\Scripts\Utils\PLayGamesController.cs" />
     <Compile Include="Assets\Scripts\Utils\PlayGamesControllerLoader.cs" />
     <Compile Include="Assets\Scripts\Utils\PlayGamesLoginIndicator.cs" />
     <Compile Include="Assets\Scripts\Utils\Rzymskie.cs" />
     <Compile Include="Assets\Scripts\Utils\ScrollController.cs" />
+    <Compile Include="Assets\Scripts\Utils\TutorialController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Editor\projsettings.txt" />
     <None Include="Assets\Editor\template-AndroidManifest.txt" />
     <None Include="Assets\materials\ShawlShader.shader" />
     <None Include="Assets\Plugins\Android\google-play-services_lib\AndroidManifest.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\bin\AndroidManifest.xml" />
     <None Include="Assets\Plugins\Android\google-play-services_lib\proguard.txt" />
     <None Include="Assets\Plugins\Android\google-play-services_lib\README.txt" />
     <None Include="Assets\Plugins\Android\google-play-services_lib\res\color\common_signin_btn_text_dark.xml" />
@@ -216,6 +225,7 @@
     <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-af\common_strings.xml" />
     <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-am\common_strings.xml" />
     <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-ar\common_strings.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-be\common_strings.xml" />
     <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-bg\common_strings.xml" />
     <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-bn-rBD\common_strings.xml" />
     <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-ca\common_strings.xml" />
