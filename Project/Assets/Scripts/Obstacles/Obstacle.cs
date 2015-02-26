@@ -4,12 +4,24 @@ using System.Collections;
 using System.Collections.Generic;
 using rzymskie_cs;
 
+
+public enum EObstacleType
+{
+    ObstacleSlideLeft,
+    ObstacleSlideRight,
+    ObstacleSlideDown,
+    ObstacleDubbleTap
+}
+
 [RequireComponent( typeof( BoxCollider2D ) )]
 [RequireComponent( typeof( AudioSource ) )]
+
+
+
 public abstract class Obstacle : MonoBehaviour
 {
    public int                    m_obstacleTypeIndex;
-
+   //public EObstacleType          m_obstacleType;
    public float                  m_minForceToApply;
    public float                  m_maxForceToApply;
    public string                 m_soundOnPassedName;
@@ -79,6 +91,13 @@ public abstract class Obstacle : MonoBehaviour
                currSprite.color = new Color(1f, 1f, 1f, m_fadeValue);
             }
          }
+      }
+      if ( HasBeenPassed())
+      {
+          if (m_SignCentralText.enabled )
+          {
+              m_SignCentralText.color = new Color(1f, 1f, 1f, m_fadeValue);
+          }
       }
    }
 

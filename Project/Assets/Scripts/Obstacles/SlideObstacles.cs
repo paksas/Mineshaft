@@ -21,6 +21,11 @@ public class SlideObstacles : Obstacle
    {
    }
 
+    public EObstacleSlideDirection GetObstacleSlideDirection()
+    {
+        return m_slideDirection;
+    }
+
 	public override void OnMouseDownObs()
 	{
 		m_mouseDownPos = Input.mousePosition;

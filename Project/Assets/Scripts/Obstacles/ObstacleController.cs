@@ -130,6 +130,10 @@ public class ObstacleController : MonoBehaviour, IGameControllerListener
    {
    }
 
+   public Obstacle GetIncomingObstacle()
+   {
+       return m_spawnedObstacles[m_incomingObstacleIdx] as Obstacle;
+   }
 
    void OnMouseDown()
    {
