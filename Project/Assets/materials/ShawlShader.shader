@@ -1,4 +1,4 @@
-﻿Shader "Custom/ShawlShader" 
+﻿Shader "Custom/TiledMeshShader"
 {
 	Properties 
 	{
@@ -6,34 +6,14 @@
 	}
 	SubShader 
 	{
-		Lighting Off
+		LOD 100
 		Tags { "RenderType"="Opaque" }
-		LOD 200
-		
-		CGPROGRAM
-			#pragma surface surf SimpleUnlit
-  
-			half4 LightingSimpleUnlit (SurfaceOutput s, half3 lightDir, half atten) 
-			{
-				half4 c;
-				c.rgb = s.Albedo;
-				c.a = s.Alpha;
-				return c;
-			}
 
-		struct Input 
-		{
-			float4 color : COLOR;
-		};
+		Pass
+		{	
+			Tags { "LIGHTMODE"="Vertex" "RenderType"="Opaque" }
 
-		float4 _Color;
-
-		void surf (Input IN, inout SurfaceOutput o) 
-		{
-			o.Albedo = _Color.rgb;
-			o.Alpha = _Color.a;
+			Color ( 1.0, 1.0, 1.0, 1.0 ) Lighting Off
 		}
-		ENDCG
 	} 
-	FallBack "Diffuse"
 }
