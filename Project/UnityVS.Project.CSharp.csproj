@@ -183,6 +183,7 @@
     <Compile Include="Assets\Scripts\UI\ScoreDisplay.cs" />
     <Compile Include="Assets\Scripts\UI\TooltipController.cs" />
     <Compile Include="Assets\Scripts\Utils\AdmobManager.cs" />
+    <Compile Include="Assets\Scripts\Utils\AdmobManagerLoader.cs" />
     <Compile Include="Assets\Scripts\Utils\CameraFade.cs" />
     <Compile Include="Assets\Scripts\Utils\DeathMarkerController.cs" />
     <Compile Include="Assets\Scripts\Utils\MenuButtonPositioner.cs" />
@@ -199,7 +200,6 @@
     <None Include="Assets\Editor\template-AndroidManifest.txt" />
     <None Include="Assets\materials\ShawlShader.shader" />
     <None Include="Assets\Plugins\Android\google-play-services_lib\AndroidManifest.xml" />
-    <None Include="Assets\Plugins\Android\google-play-services_lib\bin\AndroidManifest.xml" />
     <None Include="Assets\Plugins\Android\google-play-services_lib\proguard.txt" />
     <None Include="Assets\Plugins\Android\google-play-services_lib\README.txt" />
     <None Include="Assets\Plugins\Android\google-play-services_lib\res\color\common_signin_btn_text_dark.xml" />
@@ -225,7 +225,6 @@
     <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-af\common_strings.xml" />
     <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-am\common_strings.xml" />
     <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-ar\common_strings.xml" />
-    <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-be\common_strings.xml" />
     <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-bg\common_strings.xml" />
     <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-bn-rBD\common_strings.xml" />
     <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-ca\common_strings.xml" />

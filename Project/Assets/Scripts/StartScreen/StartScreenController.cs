@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class StartScreenController : MonoBehaviour 
 {
    public bool                 m_forceLogin;
+   public bool                 m_showAd;
    private Animator            m_animator;
  
 	// Use this for initialization
@@ -18,7 +19,11 @@ public class StartScreenController : MonoBehaviour
        {
            PLayGamesController.m_forceLoginAttemptProcessed = true;
            PLayGamesController.instance.LogIn();
-       }  
+       }
+       if (m_showAd)
+       {     
+           AdmobManager.instance.ShowBannerWithDelay();
+       }
        
 	}
 

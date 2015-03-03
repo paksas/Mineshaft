@@ -197,6 +197,7 @@ public class GameController : MonoBehaviour
       {
          listener.OnGameStarted();
       }
+      AdmobManager.instance.ShowBanner();
    }
 
    private void NotifyGameFinished()
@@ -206,6 +207,7 @@ public class GameController : MonoBehaviour
       {
          listener.OnGameFinished();
       }
+      AdmobManager.instance.HideBanner();
    }
 
    private void NotifyGamePaused()
